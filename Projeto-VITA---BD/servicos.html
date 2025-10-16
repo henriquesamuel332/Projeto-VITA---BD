@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VITA — Serviços</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    <header>
+        <div class="logo"><h1><a href="index.html">VITA</a></h1></div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="servicos.html" class="active">Serviços</a>
+            <a href="campanhas.html">Campanhas</a>
+            <a href="profissionais.html">Profissionais</a>
+            <a href="unidades.html">Unidades de Saúde</a>
+            <a href="quemsomos.html">Quem Somos</a>
+        </nav>
+    </header>
+    <main>
+    <section class="page-header">
+      <h2 class="page-title">Serviços de Saúde</h2>
+      <p class="page-subtitle">Encontre rapidamente o serviço que você precisa e veja onde ele está disponível em Bom Despacho, através do VITA.</p>
+    </section>
+
+    <div style="text-align:center; margin-bottom: 2rem;">
+      <input id="searchInput" type="text" placeholder="Pesquisar serviço..." 
+             style="padding:0.8rem 1rem; width:90%; max-width:500px; border:1px solid #ddd; border-radius:50px; font-size:1rem;">
+    </div>
+
+    <section id="categorias" class="content-grid">
+      <div class="card categoria" data-nome="consultas">
+        <h3>Consultas</h3>
+        <p>Clínico Geral, Pediatria, Ginecologia e outros atendimentos médicos em sua USF.</p>
+      </div>
+      <div class="card categoria" data-nome="vacinacao">
+        <h3>Vacinação</h3>
+        <p>Calendário vacinal completo, locais e horários de atendimento.</p>
+      </div>
+      <div class="card categoria" data-nome="odontologia">
+        <h3>Odontologia</h3>
+        <p>Tratamentos básicos, prevenção e saúde bucal.</p>
+      </div>
+      <div class="card categoria" data-nome="farmacia">
+        <h3>Farmácia e Medicamentos</h3>
+        <p>Dispensação de medicamentos e informações sobre a Farmácia Municipal.</p>
+      </div>
+      <div class="card categoria" data-nome="especialidades">
+        <h3>Especialidades</h3>
+        <p>Consultas com especialistas e encaminhamentos.</p>
+      </div>
+      <div class="card categoria" data-nome="saude-mental">
+        <h3>Saúde Mental</h3>
+        <p>Atendimento psicológico e rodas de conversa.</p>
+      </div>
+      <div class="card categoria" data-nome="pre-natal">
+        <h3>Pré-Natal</h3>
+        <p>Acompanhamento especializado para gestantes.</p>
+      </div>
+      <div class="card categoria" data-nome="prevencao">
+        <h3>Prevenção</h3>
+        <p>Controle de doenças e ações de saúde pública.</p>
+      </div>
+    </section>
+
+    <section id="detalhes" style="display:none; margin-top:3rem;">
+      <div class="card" id="detalhesConteudo"></div>
+      <div style="text-align:center; margin-top:1.5rem;">
+        <button onclick="voltarCategorias()" class="btn">Voltar</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // --- Função de busca ---
+    const searchInput = document.getElementById('searchInput');
+    const categorias = document.querySelectorAll('.categoria');
+
+    searchInput.addEventListener('input', () => {
+      const termo = searchInput.value.toLowerCase();
+      categorias.forEach(cat => {
+        const nome = cat.querySelector('h3').textContent.toLowerCase();
+        cat.style.display = nome.includes(termo) ? 'block' : 'none';
+      });
+    });
+
+    // --- Funções de exibição de detalhes ---
+    const detalhes = document.getElementById('detalhes');
+    const detalhesConteudo = document.getElementById('detalhesConteudo');
+    const categoriasContainer = document.getElementById('categorias');
+
+    const infoServicos = {
+      "consultas": `
+        <h3>Consultas</h3>
+        <p><strong>Para quem:</strong> Toda a população.</p>
+        <p><strong>Onde:</strong> Unidades de Saúde da Família (USF).</p>
+        <p><strong>Como agendar:</strong> Procure a recepção da sua unidade de saúde (USF) para agendar sua consulta. Consulte a página de <a href="unidades.html">Unidades de Saúde</a> no VITA para encontrar a mais próxima.</p>
+      `,
+      "vacinacao": `
+        <h3>Vacinação</h3>
+        <p><strong>Para quem:</strong> Crianças, adolescentes, adultos e idosos.</p>
+        <p><strong>Onde:</strong> Em unidades de saúde que realizam a vacinação. </p>
+        <p><strong>Como agendar:</strong> Verifique os horários de vacinação diretamente nas <a href="unidades.html">Unidades de Saúde</a>. Leve seu cartão de vacinação.</p>
+      `,
+      "odontologia": `
+        <h3>Odontologia</h3>
+        <p><strong>Para quem:</strong> População em geral.</p>
+        <p><strong>Onde:</strong> Centro de Especialidades Odontológicas (CEO).</p>
+        <p><strong>Como agendar:</strong> Consulte a seção <a href="unidades.html">Unidades de Saúde</a> para verificar o contato e o endereço do CEO. O agendamento pode requerer encaminhamento via USF ou procura direta.</p>
+      `,
+      "farmacia": `
+        <h3>Farmácia e Medicamentos</h3>
+        <p><strong>Para quem:</strong> Pacientes com receita e cartão SUS.</p>
+        <p><strong>Onde:</strong> Farmácia Municipal.</p>
+        <p><strong>Como acessar:</strong> Consulte o endereço, telefone e horário da Farmácia Municipal na página <a href="unidades.html">Unidades de Saúde</a> do VITA.</p>
+      `,
+      "especialidades": `
+        <h3>Especialidades</h3>
+        <p><strong>Para quem:</strong> Pacientes com encaminhamento médico.</p>
+        <p><strong>Onde:</strong> Centro de Especialidades Médicas (CEM).</p>
+        <p><strong>Como agendar:</strong> O acesso é feito através de encaminhamento médico. Consulte os profissionais disponíveis na seção <a href="profissionais.html">Profissionais</a> do VITA e o endereço do CEM em <a href="unidades.html">Unidades de Saúde</a>.</p>
+      `,
+      "saude-mental": `
+        <h3>Saúde Mental</h3>
+        <p><strong>Para quem:</strong> Pessoas que precisam de apoio psicológico ou emocional.</p>
+        <p><strong>Onde:</strong> Centros de Atenção Psicossocial (CAPS) e Unidades de Saúde.</p>
+        <p><strong>Como agendar:</strong> Procure a unidade de saúde mais próxima ou o CAPS para informações sobre agendamentos e grupos de conversa. Você pode verificar os especialistas disponíveis em <a href="profissionais.html">Profissionais</a>.</p>
+      `,
+      "pre-natal": `
+        <h3>Pré-Natal</h3>
+        <p><strong>Para quem:</strong> Gestantes de qualquer idade.</p>
+        <p><strong>Onde:</strong> Todas as Unidades de Saúde da Família (USF) e Hospital Municipal.</p>
+        <p><strong>Como agendar:</strong> Levar documento de identidade e cartão do SUS diretamente na unidade para iniciar o acompanhamento.</p>
+      `,
+      "prevencao": `
+        <h3>Prevenção</h3>
+        <p><strong>Para quem:</strong> População em geral.</p>
+        <p><strong>Onde:</strong> Unidades de Saúde e locais de campanha.</p>
+        <p><strong>Como participar:</strong> Procure sua USF de referência para mais informações sobre grupos e controle de doenças. Acompanhe as ações ativas na página <a href="campanhas.html">Campanhas</a> no VITA.</p>
+      `
+    };
+
+    categorias.forEach(cat => {
+      cat.addEventListener('click', () => {
+        const nome = cat.getAttribute('data-nome');
+        detalhesConteudo.innerHTML = infoServicos[nome];
+        categoriasContainer.style.display = 'none';
+        detalhes.style.display = 'block';
+      });
+    });
+
+    function voltarCategorias() {
+      detalhes.style.display = 'none';
+      categoriasContainer.style.display = 'grid';
+    }
+
+    // --- Acessibilidade: alto contraste ---
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnContrast = document.getElementById('toggle-contrast');
+      const body = document.body;
+      const key = 'vita-contrast-mode';
+      const saved = localStorage.getItem(key);
+      if (saved === 'true') body.classList.add('high-contrast');
+      btnContrast.addEventListener('click', () => {
+        const active = body.classList.toggle('high-contrast');
+        localStorage.setItem(key, active);
+      });
+    });
+  </script>
+  
+     <footer>VITA © 2025 — Projeto Educacional BD City Coders</footer>
+</body>
+</html>

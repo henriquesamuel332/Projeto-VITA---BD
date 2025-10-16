@@ -1,0 +1,421 @@
+/* VITA - REDESIGN 2025 - CSS FINAL */
+
+/* 1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS (CORES MANTIDAS) */
+:root {
+    --azul-vita: #3B82F6;
+    --azul-escuro: #1E40AF;
+    --verde-saude: #10B981;
+    --fundo-site: #F9FAFB;
+    --fundo-card: #FFFFFF;
+    --texto-escuro: #1F2937;
+    --texto-medio: #6B7280;
+    --borda-clara: #E5E7EB; /* Borda levemente mais clara para soft design */
+    
+    /* Variáveis de Contraste e Perfil (Mantidas para referência do CSS, mas sem uso funcional) */
+    --contraste-fundo: #121212;
+    --contraste-fundo-card: #1E1E1E;
+    --contraste-texto: #FACC15;
+    --contraste-borda: #A16207;
+    --c-brand: var(--azul-vita);
+    --c-brand-dark: var(--azul-escuro);
+    --c-text-primary: var(--texto-escuro);
+    --c-text-secondary: var(--texto-medio);
+    --c-surface: var(--fundo-card);
+    --c-background: var(--fundo-site);
+    --c-border: var(--borda-clara);
+    --radius-lg: 16px;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    /* Sombras SOFT (Ajuste principal para conforto) */
+    --shadow-md: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Reset e Padrões */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--fundo-site);
+    color: var(--texto-escuro);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 2. LAYOUT E TIPOGRAFIA */
+main { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
+.page-header { text-align: center; margin-bottom: 3rem; }
+.page-title { font-size: 2.5rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 0.5rem; }
+.page-subtitle { font-size: 1.1rem; color: var(--texto-medio); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+.section-title { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; }
+.section-title.center { text-align: center; }
+
+/* 3. HEADER E NAVEGAÇÃO */
+header {
+    background-color: var(--fundo-card); 
+    padding: 1rem 2rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06); /* Sombra mais sutil */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; top: 0; z-index: 100; /* Posição STICKY para DESKTOP */
+    border-bottom: 1px solid var(--borda-clara);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.logo h1 { color: var(--azul-vita); font-size: 1.75rem; font-weight: 700; }
+nav { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+nav a {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--texto-medio);
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 99px;
+}
+nav a:hover { color: var(--azul-vita); background-color: #EFF6FF; }
+nav a.active { color: var(--azul-vita); background-color: #DBEAFE; font-weight: 600; }
+
+/* 4. BOTÕES E LINKS */
+.btn {
+    background-image: linear-gradient(to right, var(--azul-vita), var(--azul-escuro));
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 99px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2); /* Sombra soft */
+    display: inline-block;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3); }
+
+/* 5. CARDS GERAIS (SOFT DESIGN) */
+.content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.card {
+    background-color: var(--fundo-card);
+    border-radius: 12px; 
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); 
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, border-color 0.3s;
+    border: 1px solid var(--borda-clara);
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
+.card h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--texto-escuro); }
+.card p { color: var(--texto-medio); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem; }
+.card-icon { color: var(--verde-saude); width: 48px; height: 48px; margin-bottom: 1rem; }
+
+/* 6. ESTILOS ESPECÍFICOS DAS PÁGINAS */
+.hero { text-align: center; padding: 4rem 2rem; }
+.hero h2 { font-size: 3rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+.home-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
+
+/* Profissionais */
+.professional-card { text-align: center; }
+.professional-card img { 
+    width: 120px; 
+    height: 120px; 
+    border-radius: 50%; 
+    margin-bottom: 1rem; 
+    border: 4px solid var(--azul-vita); 
+    padding: 4px; 
+}
+.professional-card p { color: var(--verde-saude); font-weight: 600; }
+
+/* Quem Somos */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.team-card { text-align: center; }
+.team-card img { 
+    width: 140px; 
+    height: 140px; 
+    border-radius: 50%; 
+    margin-bottom: 1.5rem; 
+    border: 4px solid var(--azul-vita); 
+    padding: 5px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+}
+.team-card h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 0.25rem; }
+.team-card span { color: var(--verde-saude); font-weight: 500; }
+
+/* Campanhas */
+.campaign-card { margin-bottom: 1.5rem; }
+.campaign-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.campaign-header h3 { font-size: 1.4rem; font-weight: 600; }
+.badge { font-size: 0.8rem; font-weight: 600; padding: 0.3rem 0.8rem; border-radius: 99px; color: white; }
+.badge.active { background-color: var(--verde-saude); }
+.badge.finished { background-color: var(--texto-medio); }
+
+/* Unidades de Saúde */
+.map-image-container { border-radius: 12px; overflow: hidden; margin-bottom: 3rem; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05); }
+.units-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
+.unit-card {
+    background-color: var(--fundo-card);
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03); 
+    border: 1px solid var(--borda-clara);
+    border-left: 5px solid var(--azul-vita);
+    padding: 1.25rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+.unit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+.unit-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--azul-escuro);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--borda-clara);
+}
+.info-group { margin-bottom: 0.9rem; }
+.info-group strong { font-size: 0.85rem; }
+.info-group p, .info-group a { font-size: 0.9rem; }
+
+/* Quem Somos */
+.about-section { margin-bottom: 4rem; }
+.about-section p { font-size: 1.1rem; line-height: 1.8; color: var(--texto-medio); text-align: center; max-width: 800px; margin: 0 auto; }
+
+
+/* 7. ACESSIBILIDADE E FOOTER */
+footer { text-align: center; padding: 3rem; margin-top: 3rem; color: var(--texto-medio); font-size: 0.9rem; }
+
+/* 8. ESTILOS DE PERFIL (UBS / PSICÓLOGA) */
+.profile-header {
+    background-color: var(--c-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    border: 1px solid var(--c-border);
+}
+.profile-banner { height: 200px; background: linear-gradient(135deg, #a8caff, var(--c-brand)); border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+.profile-picture { width: 130px; height: 130px; border-radius: 50%; border: 5px solid var(--c-surface); object-fit: cover; position: absolute; top: 135px; left: 50%; transform: translateX(-50%); }
+.profile-info { padding: var(--spacing-lg); padding-top: 80px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.profile-details h1 { font-size: 1.75rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+.profile-details p { color: var(--c-text-secondary); font-size: 1rem; margin-top: 0.25rem; max-width: 450px; }
+.btn-follow { background-color: var(--c-brand); color: white; border: none; padding: 0.6rem 1.5rem; border-radius: 99px; font-weight: 600; cursor: pointer; margin-top: var(--spacing-md); transition: all 0.2s; }
+.btn-follow:hover { background-color: var(--c-brand-dark); transform: translateY(-2px); }
+.profile-stats { display: flex; justify-content: center; gap: 2.5rem; padding: var(--spacing-lg); padding-top: 0; }
+.stat { text-align: center; }
+.stat strong { font-size: 1.2rem; display: block; }
+.stat span { color: var(--c-text-secondary); font-size: 0.9rem; }
+.profile-nav { display: flex; justify-content: center; gap: var(--spacing-md); border-top: 1px solid var(--c-border); padding: 0.5rem; }
+.profile-tab { padding: 0.75rem var(--spacing-md); font-weight: 600; color: var(--c-text-secondary); cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; }
+.profile-tab:hover { color: var(--c-brand); }
+.profile-tab.active { color: var(--c-brand); border-bottom-color: var(--c-brand); }
+.content-section { display: none; }
+.content-section.active { display: block; }
+.post-card, .about-card, .agenda-card { background: var(--c-surface); border-radius: var(--radius-lg); padding: var(--spacing-lg); margin-bottom: var(--spacing-md); box-shadow: var(--shadow-md); border: 1px solid var(--c-border); }
+.post-header { display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-md); }
+.post-header img { width: 48px; height: 48px; border-radius: 50%; }
+.hashtags { color: var(--c-brand); font-weight: 500; }
+.about-card h2 { font-size: 1.5rem; margin-bottom: var(--spacing-md); }
+.about-card p { margin-bottom: var(--spacing-md); }
+.photo-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); }
+.photo-post { position: relative; overflow: hidden; border-radius: var(--radius-lg); cursor: pointer; aspect-ratio: 1 / 1; }
+.photo-post img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+.photo-post:hover img { transform: scale(1.05); }
+
+/* CALENDÁRIO */
+.calendar-header { display: flex; justify-content: space-between; align-items: center; padding: 0 0.5rem; margin-bottom: 1.5rem; }
+.calendar-header h3 { font-size: 1.5rem; text-align: center; margin: 0; }
+.calendar-nav-btn { background-color: #F3F4F6; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 1.5rem; font-weight: bold; color: var(--c-text-secondary); cursor: pointer; transition: background-color 0.2s; }
+.calendar-nav-btn:hover:not(:disabled) { background-color: #E5E7EB; }
+.calendar-nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.calendar-viewport { overflow: hidden; }
+.calendar-slider { display: flex; transition: transform 0.4s ease-in-out; }
+.calendar-month { flex: 0 0 100%; padding: 0 0.5rem; }
+.calendar-days, .calendar-dates { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.5rem; }
+.calendar-days { font-weight: 600; color: var(--c-text-secondary); text-align: center; margin-bottom: 1rem; }
+.calendar-dates button, .calendar-dates div { border: 2px solid transparent; border-radius: 4px; padding: 0.75rem 0; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+.calendar-dates button:hover:not(.unavailable) { border-color: var(--c-brand); }
+.available { background-color: #e8f0fe; color: #0056b3; border: 1px solid #cddcfa; }
+.unavailable { background-color: #e9ecef; color: #6c757d; cursor: not-allowed; }
+.consulta { background-color: #28a745; color: #fff; font-weight: 700; }
+.reuniao { background-color: #ff9800; color: #fff; font-weight: 700; }
+.legend { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--c-border); }
+.legend span { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+.legend div { width: 16px; height: 16px; border-radius: 4px; }
+
+
+/* ESTILOS DO CHAT */
+.chat-page {
+    background-color: var(--c-background);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--c-surface);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--c-border);
+    background-color: var(--c-brand);
+    color: white;
+}
+.chat-header img { width: 40px; height: 40px; border-radius: 50%; margin-right: var(--spacing-md); background-color: white; padding: 3px; }
+.back-button {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    margin-right: var(--spacing-md);
+}
+.chat-messages {
+    flex-grow: 1;
+    padding: var(--spacing-md);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.message {
+    max-width: 80%;
+    padding: 0.75rem;
+    border-radius: 15px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+.message.received {
+    background-color: var(--c-disabled);
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+    color: var(--c-text-primary);
+}
+.message.sent {
+    background-color: #DDEFFF; 
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+    color: var(--c-text-primary);
+}
+.chat-input-area {
+    display: flex;
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--c-border);
+    background-color: var(--c-surface);
+}
+.chat-input-area input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--c-border);
+    border-radius: 99px;
+    margin-right: var(--spacing-md);
+    font-size: 1rem;
+}
+.send-button {
+    background-color: var(--c-brand);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.send-button:hover {
+    background-color: var(--c-brand-dark);
+}
+
+/* 9. RESPONSIVIDADE - AJUSTES CRÍTICOS PARA MOBILE */
+@media (max-width: 900px) {
+    /* Header e Navegação: AGORA ELE NÃO É MAIS FIXO NEM STICKY */
+    header { 
+        position: static; /* <<<<<<< MUDANÇA PRINCIPAL: O cabeçalho agora rola com a página */
+        flex-direction: column; 
+        gap: 0.8rem; 
+        padding: 1rem; 
+    }
+    
+    /* Outros ajustes de mobile mantidos */
+    main { 
+        margin: 2rem auto; 
+        padding: 0 1rem;
+    }
+    .page-title { font-size: 2rem; }
+    .page-subtitle { font-size: 1rem; }
+
+    nav { 
+        justify-content: center; 
+        gap: 0.25rem; 
+    }
+    nav a { 
+        padding: 0.3rem 0.5rem; 
+        font-size: 0.85rem;
+    }
+    .logo h1 { font-size: 1.5rem; } 
+
+    /* Grades: Forçar 1 coluna */
+    .content-grid, 
+    .units-grid, 
+    .team-grid,
+    .home-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Hero e Seções */
+    .hero { padding: 2rem 0.5rem; }
+    .hero h2 { font-size: 2rem; }
+    .hero p { font-size: 0.95rem; }
+
+    /* Perfil (UBS/Psicóloga) - AJUSTES ESSENCIAIS */
+    .profile-banner { height: 120px; } 
+    .profile-picture { 
+        width: 90px; 
+        height: 90px; 
+        top: 70px; 
+    }
+    .profile-info { 
+        padding-top: 60px; 
+    }
+    .profile-details h1 { font-size: 1.4rem; }
+    .profile-stats { gap: 1.5rem; padding: 1rem; }
+    
+    /* CORREÇÃO DAS ABAS DE PERFIL: MODO FLEX-WRAP */
+    .profile-nav { 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        overflow-x: hidden; 
+        padding: 0.5rem 0;
+        gap: 0.5rem 1rem; 
+    }
+    .profile-nav a { 
+        flex-shrink: 0; 
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .post-card, .about-card, .agenda-card { padding: 1.25rem; }
+    
+    /* Ajustes Adicionais */
+    .unit-card h3 { font-size: 1.1rem; }
+    .unit-card { padding: 1rem; }
+    .info-group { margin-bottom: 0.6rem; }
+    .info-group p, .info-group a { font-size: 0.85rem; }
+    
+    /* Chat: ocupando a tela inteira em mobile */
+    .chat-container {
+        max-width: 100%;
+        height: 100vh;
+        margin: 0;
+    }
+}
+
+
