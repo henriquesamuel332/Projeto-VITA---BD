@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VITA — Campanhas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="vitaclassic.png" type="image.png">
+
+    
+    <style>
+        body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+    color: #222;
+}
+
+header {
+    background: #0078d7;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo h1 {
+    margin: 0;
+    font-weight: 700;
+}
+
+nav a {
+    color: white;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+nav a.active {
+    border-bottom: 2px solid white;
+}
+
+.page-header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(to right, #0078d7, #00bcd4);
+    color: white;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    color: #0078d7;
+}
+
+.campaign-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.campaign-content {
+    padding: 1.5rem;
+}
+
+.campaign-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+.badge.active {
+    background: #28a745;
+}
+
+.badge.finished {
+    background: #6c757d;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #0078d7;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #005fa3;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #f1f1f1;
+    font-size: 0.9rem;
+    color: #555;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><h1>VITA</h1></div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="campanhas.html" class="active">Campanhas</a>
+            <a href="profissionais.html">Profissionais</a>
+            <a href="unidades.html">Unidades de Saúde</a>
+            <a href="quemsomos.html">Quem Somos</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h2 class="page-title">Campanhas de Saúde</h2>
+            <p class="page-subtitle">Fique por dentro das ações de prevenção e vacinação em Bom Despacho para cuidar da sua saúde e de quem você ama.</p>
+        </div>
+
+        <!-- Campanhas Ativas -->
+        <h3 class="section-title">Campanhas Ativas</h3>
+        <div class="campaign-grid">
+
+            <div class="card campaign-card">
+                <img src="https://www.jaciara.mt.gov.br/imgs_noticias/3307.jpg" alt="Vacinação contra a gripe">
+                <div class="campaign-content">
+                    <div class="campaign-header">
+                        <h3>Campanha de Vacinação contra a Gripe</h3>
+                        <span class="badge active">ATIVA</span>
+                    </div>
+                    <p><strong>Público-alvo:</strong> Idosos, gestantes e crianças de 6 meses a 5 anos.</p>
+                    <p><strong>Período:</strong> 01 de Outubro a 15 de Novembro de 2025.</p>
+                    <a href="#" class="btn">Saiba mais</a>
+                </div>
+            </div>
+
+            <div class="card campaign-card">
+                <img src="https://img.freepik.com/premium-psd/outubro-rosa-combate-ao-cancer-de-mama-pink-october_927563-469.jpg?w=2000" alt="Outubro Rosa">
+                <div class="campaign-content">
+                    <div class="campaign-header">
+                        <h3>Outubro Rosa — Prevenção ao Câncer de Mama</h3>
+                        <span class="badge active">ATIVA</span>
+                    </div>
+                    <p><strong>Objetivo:</strong> Incentivar o autoexame e a mamografia regular.</p>
+                    <p><strong>Período:</strong> Todo o mês de Outubro.</p>
+                    <a href="#" class="btn">Participe</a>
+                </div>
+            </div>
+
+            <div class="card campaign-card">
+                <img src="https://img.freepik.com/premium-psd/novembro-azul-combate-ao-cancer-de-prostata-blue-november-fight-cancer_927563-834.jpg?w=1380" alt="Campanha Novembro Azul">
+                <div class="campaign-content">
+                    <div class="campaign-header">
+                        <h3>Novembro Azul — Saúde do Homem</h3>
+                        <span class="badge active">ATIVA</span>
+                    </div>
+                    <p><strong>Objetivo:</strong> Conscientização sobre o câncer de próstata e exames preventivos.</p>
+                    <p><strong>Período:</strong> 01 a 30 de Novembro de 2025.</p>
+                    <a href="#" class="btn">Agende seu exame</a>
+                </div>
+            </div>
+
+        </div>
+
+        <h3 class="section-title" style="margin-top: 3rem;">Campanhas Encerradas</h3>
+        <div class="campaign-grid">
+
+            <div class="card campaign-card">
+                <img src="https://cidadeembudasartes.sp.gov.br/wp-content/uploads/2021/11/IMG-20191009-WA0047-801x495.jpg" alt="Vacinação Sarampo">
+                <div class="campaign-content">
+                    <div class="campaign-header">
+                        <h3>Campanha de Vacinação contra o Sarampo</h3>
+                        <span class="badge finished">ENCERRADA</span>
+                    </div>
+                    <p>Agradecemos a participação de todos! A meta de cobertura foi atingida com sucesso.</p>
+                </div>
+            </div>
+
+            <div class="card campaign-card">
+                <img src="https://marketplace.canva.com/EAF9QWfCHuU/2/0/800w/canva-post-para-instagram-todos-contra-a-dengue-campanha-minimalista-vermelho-preto-e-branco-25OxUlGgyQg.jpg" alt="Campanha Dengue">
+                <div class="campaign-content">
+                    <div class="campaign-header">
+                        <h3>Mutirão de Combate à Dengue</h3>
+                        <span class="badge finished">ENCERRADA</span>
+                    </div>
+                    <p>Mais de 3.000 residências vistoriadas e centenas de focos eliminados. Obrigado pela colaboração!</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

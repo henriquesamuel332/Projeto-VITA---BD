@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBS Aeroporto | Unidade Básica de Saúde</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="vitaclassic.png" type="image.png">
+
+</head>
+<body>
+
+    <header>
+        <div class="logo"><h1>VITA</h1></div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="campanhas.html">Campanhas</a>
+            <a href="profissionais.html">Profissionais</a>
+            <a href="unidades.html" class="active">Unidades de Saúde</a>
+            <a href="quemsomos.html">Quem Somos</a>
+            
+        </nav>
+    </header>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-header">
+            <div class="profile-banner"></div>
+
+            <img src="https://www.bomdespacho.mg.gov.br/wp-content/uploads/2023/09/UBS-Aeroporto-Sao-Vicente-10-05-2019-scaled-e1693856101349.jpg" alt="UBS Aeroporto" class="profile-picture">
+
+            <div class="profile-info">
+                <div class="profile-details">
+                    <h1>
+                        UBS Aeroporto
+                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Verificado" title="Sistema de saúde verificado" style="width:24px; height:24px;">
+                    </h1>
+                    <p>Unidade Básica de Saúde • Bom Despacho, MG</p>
+                </div>
+                <button class="btn-follow">Seguir</button>
+            </div>
+
+            <div class="profile-stats">
+                <div class="stat"><strong>3</strong><span>Postagens</span></div>
+                <div class="stat"><strong>100</strong><span>Seguidores</span></div>
+            </div>
+
+            <nav class="profile-nav">
+                <a class="profile-tab active" data-target="#postagens">Postagens</a>
+                <a class="profile-tab" data-target="#profissionais">Profissionais</a>
+                <a class="profile-tab" data-target="#endereco">Endereço</a>
+                <a class="profile-tab" data-target="#agenda">Agenda</a>
+            </nav>
+        </section>
+
+        <section id="postagens" class="content-section active">
+            <article class="post-card">
+                <div class="post-header">
+                    <img src="https://www.bomdespacho.mg.gov.br/wp-content/uploads/2023/09/UBS-Aeroporto-Sao-Vicente-10-05-2019-scaled-e1693856101349.jpg" alt="Avatar da UBS Aeroporto">
+                    <div>
+                        <strong>UBS Aeroporto</strong><br>
+                        <span>Postou há 5 horas</span>
+                    </div>
+                </div>
+                <p>📢 <strong>CAMPANHA DE VACINAÇÃO CONTRA A GRIPE</strong> 📢<br>A partir de hoje, iniciamos a vacinação para idosos acima de 60 anos e crianças de 6 meses a 5 anos. Traga seu cartão de vacina!</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Abertura_da_Campanha_Nacional_de_Vacina%C3%A7%C3%A3o_contra_a_Gripe._%2841610170502%29.jpg" alt="Vacinação Gripe" style="width:100%; border-radius: 12px; margin-top:1rem;">
+                <span class="hashtags">#VacinaBD #SaudePublica #Prevencao</span>
+            </article>
+        </section>
+
+        <section id="profissionais" class="content-section">
+            <article class="about-card">
+                <h2>Equipe de Profissionais</h2>
+                <h3>Médicos</h3>
+                <ul>
+                    <li>Dra. Gabrielle – Cardiologista</li>
+                    <li>Dr. Kleberson – Clínico Geral</li>
+                    <li>Dr. Henrique Samuel – Pediatra</li>
+                </ul>
+                <h3 style="margin-top: 1.5rem;">Enfermagem</h3>
+                <ul>
+                    <li>Enf. Carla Mendes – Enfermeira</li>
+                    <li>Enf. Rafael Silva – Enfermeiro</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="endereco" class="content-section">
+            <article class="about-card">
+                <h2>Endereço e Contato</h2>
+                <p><strong>Endereço:</strong> Rua Mantiqueira, 50, São Vicente, Bom Despacho/MG</p>
+                <p><strong>CEP:</strong> 35634-254</p>
+                <p><strong>Telefone:</strong> <a href="tel:+553735226574">(37) 3522-6574</a></p>
+                <p><strong>Email:</strong> <a href="mailto:psf.aeroporto@pmbd.mg.gov.br">psf.aeroporto@pmbd.mg.gov.br</a></p>
+                <h3 style="margin-top: 1.5rem;">Horários de Atendimento</h3>
+                <p><strong>Funcionamento:</strong> 07h às 19h (Segunda a Sexta)</p>
+                <p><strong>Intervalo de Almoço:</strong> 11h às 13h</p>
+            </article>
+        </section>
+
+        <section id="agenda" class="content-section">
+            <article class="agenda-card">
+                <div class="calendar-header">
+                    <button id="prev-month" class="calendar-nav-btn">&lt;</button>
+                    <h3 id="month-year-display">Outubro 2025</h3>
+                    <button id="next-month" class="calendar-nav-btn">&gt;</button>
+                </div>
+
+                <div class="calendar-viewport">
+                    <div class="calendar-slider" id="calendar-slider">
+                        
+                        <div class="calendar-month">
+                            <div class="calendar-days">
+                                <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+                            </div>
+                            <div class="calendar-dates">
+                                <div></div><div></div><div></div><button class="reuniao">1</button><button class="reuniao">2</button><button class="reuniao">3</button><button class="reuniao">4</button><button class="unavailable">5</button><button class="consulta">6</button><button class="consulta">7</button><button class="consulta">8</button><button class="consulta">9</button><button class="consulta">10</button><button class="unavailable">11</button><button class="unavailable">12</button><button class="consulta">13</button><button class="consulta">14</button><button class="consulta">15</button><button class="consulta">16</button><button class="consulta">17</button><button class="unavailable">18</button><button class="unavailable">19</button><button class="consulta">20</button><button class="consulta">21</button><button class="consulta">22</button><button class="consulta">23</button><button class="consulta">24</button><button class="unavailable">25</button><button class="unavailable">26</button><button class="consulta">27</button><button class="consulta">28</button><button class="consulta">29</button><button class="consulta">30</button><button class="consulta">31</button>
+                            </div>
+                        </div>
+
+                        <div class="calendar-month">
+                            <div class="calendar-days">
+                                <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+                            </div>
+                            <div class="calendar-dates">
+                                <div></div><div></div><div></div><div></div><div></div><div></div><button class="reuniao">1</button><button class="unavailable">2</button><button class="consulta">3</button><button class="consulta">4</button><button class="consulta">5</button><button class="consulta">6</button><button class="consulta">7</button><button class="unavailable">8</button><button class="unavailable">9</button><button class="consulta">10</button><button class="consulta">11</button><button class="consulta">12</button><button class="consulta">13</button><button class="consulta">14</button><button class="unavailable">15</button><button class="unavailable">16</button><button class="consulta">17</button><button class="consulta">18</button><button class="consulta">19</button><button class="consulta">20</button><button class="consulta">21</button><button class="unavailable">22</button><button class="unavailable">23</button><button class="consulta">24</button><button class="consulta">25</button><button class="consulta">26</button><button class="consulta">27</button><button class="consulta">28</button><button class="unavailable">29</button><button class="unavailable">30</button>
+                            </div>
+                        </div>
+
+                        <div class="calendar-month">
+                            <div class="calendar-days">
+                                <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+                            </div>
+                            <div class="calendar-dates">
+                                <div></div><button class="consulta">1</button><button class="consulta">2</button><button class="consulta">3</button><button class="consulta">4</button><button class="consulta">5</button><button class="unavailable">6</button><button class="unavailable">7</button><button class="consulta">8</button><button class="consulta">9</button><button class="consulta">10</button><button class="consulta">11</button><button class="consulta">12</button><button class="unavailable">13</button><button class="unavailable">14</button><button class="consulta">15</button><button class="consulta">16</button><button class="consulta">17</button><button class="consulta">18</button><button class="consulta">19</button><button class="unavailable">20</button><button class="unavailable">21</button><button class="consulta">22</button><button class="consulta">23</button><button class="unavailable">24</button><button class="unavailable">25</button><button class="consulta">26</button><button class="unavailable">27</button><button class="unavailable">28</button><button class="consulta">29</button><button class="consulta">30</button><button class="unavailable">31</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="legend">
+                    <span><div class="consulta"></div> Atendimento</span>
+                    <span><div class="reuniao"></div> Campanha</span>
+                    <span><div class="unavailable"></div> Fechado</span>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer style="text-align:center; padding: 2rem; margin-top: 2rem; border-top: 1px solid #e9eef2;">
+        VITA © 2025 — Projeto Educacional
+    </footer>
+
+    <script>
+        // CÓDIGO PARA TROCA DE ABAS
+        document.querySelectorAll('.profile-tab').forEach(tab => {
+            tab.addEventListener('click', (event) => {
+                event.preventDefault();
+                document.querySelectorAll('.profile-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                
+                tab.classList.add('active');
+                const targetId = tab.getAttribute('data-target');
+                document.querySelector(targetId).classList.add('active');
+            });
+        });
+
+        // CÓDIGO PARA O CALENDÁRIO INTERATIVO
+        const prevBtn = document.getElementById('prev-month');
+        const nextBtn = document.getElementById('next-month');
+        const slider = document.getElementById('calendar-slider');
+        const monthYearDisplay = document.getElementById('month-year-display');
+
+        const months = ["Outubro 2025", "Novembro 2025", "Dezembro 2025"];
+        let currentMonthIndex = 0;
+
+        if (prevBtn && nextBtn && slider && monthYearDisplay) {
+            function updateCalendarView() {
+                slider.style.transform = `translateX(-${currentMonthIndex * 100}%)`;
+                monthYearDisplay.textContent = months[currentMonthIndex];
+                prevBtn.disabled = currentMonthIndex === 0;
+                nextBtn.disabled = currentMonthIndex === months.length - 1;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentMonthIndex < months.length - 1) {
+                    currentMonthIndex++;
+                    updateCalendarView();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentMonthIndex > 0) {
+                    currentMonthIndex--;
+                    updateCalendarView();
+                }
+            });
+
+            updateCalendarView();
+        }
+    </script>
+  
+
+</body>
+</html>
+
